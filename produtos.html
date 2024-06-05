@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Tibia Coins</title>
+    <link rel="stylesheet" href="produtos.css">
+    <link rel="icon" href="images/logo.png" >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="produtos-page">
+    <header>
+        <div class="logo-text-container">
+            <img src="images/logo.png" alt="Logo da Empresa" class="logo">
+            <div class="header-text">Zanelaa Coins</div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Tibia Coins</a></li>
+                <li><a href="contas.html">Contas Loyalty</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="imagem">
+                <img src="images/vendas.jpg" alt="Imagem do Produto">
+            </div>
+            <div class="informacoes-produto">
+                <div class="nome-personagem">
+                    <label for="charname">Nome Do Personagem:</label>
+                    <input type="text" id="charname" name="charname">
+                    <button onclick="fetchCharacterInfo()">Validar</button>
+
+                    <div id="characterInfo"></div>
+                    <div id="rawData"></div>
+                </div>
+                <div id="range-slider" class="slider-container">
+                    <input type="range" id="coinRange" min="0" max="20000" step="25">
+                    <div class="value-bubble" id="rangeValue">25</div>
+                    <div class="marks">
+                        <div class="mark mark-0">0</div>
+                        <div class="mark mark-2000">2K</div>
+                        <div class="mark mark-4000">4K</div>
+                        <div class="mark mark-6000">6K</div>
+                        <div class="mark mark-8000">8K</div>
+                        <div class="mark mark-10000">10K</div>
+                        <div class="mark mark-12000">12K</div>
+                        <div class="mark mark-14000">14K</div>
+                        <div class="mark mark-16000">16K</div>
+                        <div class="mark mark-18000">18K</div>
+                        <div class="mark mark-20000">20K</div>
+                    </div>
+                    <div class="price-container"><span id="priceValue">$0</span></div>
+                    <div id="cupomDesconto" style="display: none;">
+                        <div>Cupom de Desconto</div>
+                        <input type="text" id="cupomInput" placeholder="Digite o cupom">
+                    </div>
+
+                    </div>
+                    <!-- Botão "Comprar" movido aqui -->
+                    <button class="comprar" id="comprarBtn" style="display: none;">Comprar</button>
+                    <div class="vender-coins">
+                        <p>Compramos suas Coins</p>
+                        <a href="https://api.whatsapp.com/send?phone=5518997141501&text=Olá,%20quero%20vender%20meus%20tibia%20coins"  target="_blank" class="whatsapp-button">Venda Aqui</a>
+                    
+                </div>
+                </div>
+
+            
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Copyright 2024 Zanela Coins. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        async function fetchCharacterInfo() {
+            const charname = document.getElementById("charname").value;
+            const response = await fetch(`https://api.tibiadata.com/v4/character/${charname}`);
+            const data = await response.json();
+
+            const characterInfoContainer = document.getElementById("characterInfo");
+            const rawDataContainer = document.getElementById("rawData");
+            const comprarBtn = document.getElementById("comprarBtn");
+
+            if (data.character) {
+                const characterInfo = data.character.character;
+                const guildInfo = characterInfo.guild ? characterInfo.guild : { name: 'Sem guilda' };
+
+                characterInfoContainer.innerHTML = `
+                    <p><strong>Nome:</strong> ${characterInfo.name}</p>
+                    <p><strong>Vocação:</strong> ${characterInfo.vocation}</p>
+                    <p><strong>Nível:</strong> ${characterInfo.level}</p>
+                    <p><strong>Mundo:</strong> ${characterInfo.world}</p>
+                `;
+                comprarBtn.style.display = "block";
+                cupomDesconto.style.display = "block";
+            } else {
+                characterInfoContainer.innerHTML = "<p>Personagem não encontrado.</p>";
+                comprarBtn.style.display = "none";
+                cupomDesconto.style.display = "none";
+            }
+
+         
+        }
+    
+const coinRange = document.getElementById("coinRange");
+const coinValue = document.getElementById("rangeValue");
+const priceValue = document.getElementById("priceValue"); 
+const comprarBtn = document.getElementById("comprarBtn");
+const charnameInput = document.getElementById("charname");
+const cupomDesconto = document.getElementById("cupomDesconto");
+const cupomInput = document.getElementById("cupomInput");
+
+window.addEventListener('load', updatePrice);
+coinRange.addEventListener("input", updatePrice);
+charnameInput.addEventListener("input", updatePrice);
+
+window.addEventListener('load', function() {
+    coinRange.value = 25; // Definir o valor inicial do controle deslizante para 25
+    updatePrice();
+
+});
+
+comprarBtn.addEventListener("click", function(event) {
+    const value = coinRange.value;
+    const pricePerCoin = 50 / 250;           // Aqui atualiza o preço das coins 
+    let price = value * pricePerCoin;
+    const charname = charnameInput.value;
+    const cupomCode = cupomInput.value.toUpperCase();
+
+    const whatsappNumber = "5518997141501";
+
+    // Aplicar desconto se o cupom for válido
+    if (cupomCode === "GUIZITOS") {
+        const discount = 0.01;
+        price *= (1 - discount);
+    }
+
+    let message = `Olá, gostaria de comprar ${value} coins por R$${price.toFixed(2)}. Nome do personagem: ${charname}.`;
+    
+    // Adicionar informação do cupom à mensagem
+    if (cupomCode === "GUIZITOS") {
+        message += " Cupom de desconto: GUIZITOS";
+    }
+
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+});
+
+
+cupomInput.addEventListener("input", () => {
+    updatePrice();
+});
+
+function updatePrice() {
+    const pricePerCoin = 50 / 250;          // Aqui atualiza o preço das coins 
+    const totalCoins = coinRange.value;
+    let basePrice = totalCoins * pricePerCoin;
+
+    // Cupom de Desconto (sem mensagem)
+    const keyword = "GUIZITOS";
+    const cupomCode = cupomInput.value.toUpperCase();
+
+    if (cupomCode === keyword) {
+        const discount = 0.01;
+        basePrice *= (1 - discount);
+    }
+
+    priceValue.textContent = `R$${basePrice.toFixed(2)}`;
+}
+      coinRange.addEventListener("input", () => {
+    rangeValue.textContent = coinRange.value; 
+    updatePrice();
+});
+
+
+
+
+
+
+        
+    </script>
+
+
+
+</body>
+</html>
+

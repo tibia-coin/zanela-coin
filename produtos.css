@@ -1,0 +1,487 @@
+/* Estilos do Cabeçalho */
+header {
+  background-color: #1a1818; /* Fundo preto sólido */
+  color: #fff; 
+  padding: 1.5rem 2rem; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 3%);
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #8B0000;
+}
+
+main {
+  padding: 10rem 2rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #8B0000;
+  transform: translateY(-2px);
+}
+
+footer {
+  background-color: #1f1f1f;
+  text-align: center;
+  padding: 1em 0;
+  color: #f5ebeb;
+  border-top: none;
+  bottom: 0; 
+  width: 100%;
+
+
+}
+
+/* Estilos do Controle Deslizante */
+/*#range-slider {
+  padding: 20px;
+  border: 2px solid #2c3e50;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+  position: relative;
+}*/
+/* Estilos do Controle Deslizante */
+#range-slider {
+  padding: 20px;
+  border: 2px solid #586c80;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  position: relative; /* Certifique-se de que o contêiner pai é relativo */
+  display: flex;
+  flex-direction: column; /* Coloca os itens em uma coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Contorno preto ao redor do controle deslizante */
+#range-slider::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 4px solid black; /* Define a largura e a cor do contorno */
+  border-radius: 19px; /* Ajuste para combinar com o arredondamento do controle deslizante */
+  z-index: -1; /* Certifique-se de que o contorno fique atrás do controle deslizante */
+}
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  margin-top: 50px;
+}
+
+#coinRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3498db;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+#coinRange::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3498db;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+
+/* Container do Logo e Texto */
+.logo-text-container { 
+  display: flex;
+  align-items: center; 
+  margin-left: 30px;
+}
+
+.logo {
+  max-width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.header-text {
+  font-size: 1.8rem; 
+  font-weight: bold;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+}
+
+/* Estilos Globais */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #080808;
+  background-color: #f4f4f4;
+  background-image: url('images/produtos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.container {
+  display: flex;
+  width: 90%; 
+  padding: 80px 0; 
+}
+.imagem {
+  flex: 2; /* Aumenta a largura da imagem */
+  margin-right: 150px;
+}
+
+.imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.informacoes-produto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  padding: 40px;
+  background-color: #7e7c7c; 
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  border: 4px solid #000000;
+  box-shadow: 2px 2px 10px #000000;
+  background-color: #b0a593; /* Cor de fundo principal, imitando um tom terroso */
+  background-image: 
+  radial-gradient(circle at top left, #000000 30%, transparent 80%),
+  radial-gradient(circle at top right, #000000 30%, transparent 80%),
+  radial-gradient(circle at bottom left, #000000 30%, transparent 80%),
+  radial-gradient(circle at bottom right, #000000 30%, transparent 80%),
+  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="30" fill="none" stroke="#7e7c7c" stroke-width="5"/><rect x="20" y="20" width="60" height="60" fill="none" stroke="#7e7c7c" stroke-width="5"/><line x1="10" y1="10" x2="90" y2="90" stroke="#7e7c7c" stroke-width="5"/><line x1="90" y1="10" x2="10" y2="90" stroke="#7e7c7c" stroke-width="5"/></svg>');
+    background-size: 60% 60%, 60% 60%, 60% 60%, 60% 60%, cover;
+    background-position: top left, top right, bottom left, bottom right, center;
+    background-repeat: no-repeat;
+    font-family: 'Garamond', serif; /* Fonte clássica que remete à Idade Média */
+  
+  
+}
+
+
+
+
+.opcao {
+  background-color: #444;
+  border: 1px solid #555;
+  padding: 20px;
+  margin-bottom: 20px; 
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.opcao:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.opcao.selecionada {
+  background-color: #8B0000; 
+  color: white;
+}
+
+.opcao h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox label {
+  margin-left: 10px;
+}
+
+.comprar {
+  background-color: #8B0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.comprar:hover {
+  background-color: #8B0000;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .imagem {
+    width: 100%; 
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .informacoes-produto {
+    width: 100%;
+  }
+
+  .nome-personagem {
+    background-color: #444444;
+    border: 1px solid #555;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: left;
+
+
+  }
+  
+  .nome-personagem h3 {
+    margin-bottom: 5px;
+  }
+  
+  .nome-personagem input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #474545;
+    border-radius: 5px;
+    background-color: #3d3b3b;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .nome-personagem button {
+    background-color: #8B0000;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #characterInfo {
+    margin-top: 10px;
+  }
+  
+  #characterInfo p {
+    margin-bottom: 5px;
+  }
+}
+
+
+#coinRange {
+  width: 105%; /* Define a largura do controle deslizante */
+  height: 10px; /* Define a altura do controle deslizante */
+  -webkit-appearance: none; /* Remove o estilo padrão do controle deslizante no Safari */
+  background: #696868; /* Define a cor de fundo do controle deslizante */
+  outline: none; /* Remove o contorno padrão do controle deslizante */
+  border-radius: 5px; /* Define o raio das bordas do controle deslizante */
+  margin-top: 30px; /* Define o espaçamento superior do controle deslizante */
+}
+
+#coinRange::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove o estilo padrão do polegar do controle deslizante no Safari */
+  width: 30px; /* Define a largura do polegar do controle deslizante */
+  height: 30px; /* Define a altura do polegar do controle deslizante */
+  border-radius: 50%; /* Define o raio das bordas do polegar do controle deslizante */
+  background: #696868; /* Define a cor de fundo do polegar do controle deslizante */
+  cursor: pointer; /* Define o cursor ao passar sobre o polegar do controle deslizante */
+  border: 2px solid #fff; /* Define a largura e a cor da borda do polegar do controle deslizante */
+}
+
+#coinRange::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3498db;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.value-bubble {
+  position: absolute;
+  top: -40px;
+  background: #8B0000;
+  color: white;
+  left: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  transform: translateX(-50%);
+  z-index: 1; /* Certifique-se de que o valor fique acima do controle deslizante */
+  background: linear-gradient(to bottom, #8B0000, #8B0000);  /* numero que diz a quantidade de coins */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.marks {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.mark {
+  position: absolute;
+  bottom: -25px; /* Ajuste para centralizar os números */
+  color: #000000; /*numeros da barra */
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.mark-0   { left: 7%;    transform: translateX(-50%); font-size: 12px;}
+.mark-2000 { left: 20%;   transform: translateX(-50%); font-size: 12px;}
+.mark-4000 { left: 27%;   transform: translateX(-50%); font-size: 12px;}
+.mark-6000 { left: 34%;   transform: translateX(-50%); font-size: 12px;}
+.mark-8000 { left: 41%;   transform: translateX(-50%); font-size: 12px;}
+.mark-10000 { left: 49%;   transform: translateX(-50%); font-size: 12px;}
+.mark-12000 { left: 57%;   transform: translateX(-50%); font-size: 12px;}
+.mark-14000 { left: 65%;   transform: translateX(-50%); font-size: 12px;}
+.mark-16000 { left: 73%;   transform: translateX(-50%); font-size: 12px;}
+.mark-18000 { left: 81%;   transform: translateX(-50%); font-size: 12px;}
+.mark-20000 { left: 90%;  transform: translateX(-50%); font-size: 12px;}
+
+.max-value {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: #ecf0f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.price-container {
+  text-align: center; /* Centraliza o texto dentro do contêiner */
+  color: white;
+  font-size: 20px;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  margin-top: 30px; /* Espaçamento superior entre o slider e o preço */
+  background-color: #696868; /* Cor de fundo do quadrado cinza */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  width: 100%; /* Ocupa toda a largura disponível */
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+#priceValue {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.vender-coins {
+  margin-top: 30px;
+}
+
+.vender-coins p {
+  font-size: 23px;
+  margin-bottom: 30px;
+  font-family: verdana;
+  
+}
+
+.whatsapp-button {
+  background-color: #8B0000;
+  color: white;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.whatsapp-button:hover {
+  background-color: #8B0000;
+}
+
+.fonte1 {
+  font-size: 8px;
+}
+
+#cupomDesconto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+}
+
+#cupomDesconto div {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#cupomInput {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  text-align: center;
+}
+

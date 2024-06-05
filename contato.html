@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Loja de Tibia Coins e Contas</title>
+    <link rel="stylesheet" href="contato.css">
+    <link rel="icon" href="images/logo.png" >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="contato-page">
+    <header>
+
+        <div class="logo-text-container">
+            <img src="images/logo.png" alt="Logo da Empresa" class="logo">
+            <div class="header-text">Zanelaa Coins</div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Tibia Coins</a></li>
+                <li><a href="contas.html">Contas Loyalty</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="sobre-nos">
+           
+         <br> <br> <br>  <br> 
+        <section id="contact-info">
+            <h2>Informações de Contato</h2>
+            <p>Telefone: +55 18 99714-1501</p>
+            <p>Instagram: @zanelaacoins</p>
+        </section>
+        <br> <br> <br>
+     
+        <section id="contact-form">
+            <h2>Duvidas ? Entre em contato</h2>
+            <form onsubmit="return redirectToWhatsApp()">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>                
+                
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                
+                <a href="#" id="botao-enviar-whatsapp" class="botao-whatsapp">Enviar</a>
+
+            </form>
+        </section>
+    </section>
+    <a href="https://wa.me/5518997141501?text=Olá%2C%20vim%20pelo%20site%20Zanelaa%20Coins" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+
+    <script>
+        document.getElementById('botao-enviar-whatsapp').addEventListener('click', function(event) {
+          event.preventDefault(); 
+      
+          const nome = document.getElementById("nome").value;
+          const mensagem = document.getElementById("mensagem").value;
+      
+          const mensagemFormatada = `Olá, meu nome é ${nome}. Minha duvida é ${mensagem}`;
+          const linkWhatsApp = `https://api.whatsapp.com/send?phone=5518997141501&text=${encodeURIComponent(mensagemFormatada)}`;
+      
+          window.open(linkWhatsApp, '_blank');
+        });
+      </script>
+
+    </main>
+    <footer>
+        <p>&copy; Copyright 2024 Zanela Coins. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+

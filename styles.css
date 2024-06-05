@@ -1,0 +1,277 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #080808;
+    background-color: #1f1f1f;
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #1a1818; /* Fundo preto sólido */
+    color: #fff; 
+    padding: 1.5rem 2rem; 
+    position: fixed;
+    width: 97%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+    filter: brightness(50%);
+
+}
+
+.hero-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+}
+
+#hero .hero-text #logo-container {
+    margin-top: 100px; 
+}
+
+
+.cta-button {
+    background-color: #8B0000;
+    color: #fff;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #9A2A2A;
+}
+
+#features {
+    padding: 2em 0;
+    text-align: center;
+}
+
+.feature {
+    display: inline-block;
+    width: 30%;
+    margin: 1em;
+    text-align: center;
+}
+
+.feature img {
+    width: 100px;
+    height: auto;
+}
+
+.feature h3 {
+    margin: 0.5em 0;
+}
+
+@media (max-width: 768px) {
+    #features .feature {
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 0px solid #080808;
+    color :#f5ebeb;
+    border-top: none; /* Remove a borda superior */
+}
+
+/* Container do Logo e Texto */
+.logo-text-container { /* Novo container para agrupar logo e texto */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o logo e o texto */
+    margin-left: 30px; /* Adiciona uma margem à esquerda */
+}
+
+.logo {
+    max-width: 60px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Adiciona um espaçamento entre a logo e o texto */
+}
+
+/* Texto do Cabeçalho */
+.header-text {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    font-family: Verdana
+   
+}
+
+/* Estilos do Menu */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1px;
+  }
+  
+  #logo-container img {
+    width: 300px; /* Ajuste o valor conforme necessário */
+    height: auto;  /* Mantém a proporção da imagem */
+  }
+
+
+  nav ul li a.active {
+    background-color: #8B0000; /* Cor de fundo do item ativo */
+    color: #f3f2f2; /* Cor do texto do item ativo */
+}
+
+nav ul li a:hover {
+    background-color: #8B0000; /* Cor de fundo ao passar o mouse */
+    color: #f3f2f2; /* Cor do texto ao passar o mouse */
+}
+
+
+.absolute{
+    position: absolute;
+  }
+  
+  
+  .relative{
+    position: relative;
+  }
+  
+  
+  
+  .top-0{
+    top: 0px;
+  }
+  
+  
+  .flex{
+    display: flex;
+  }
+  
+  
+  .w-20{
+    width: 5rem;
+  }
+  
+  .w-80{
+    width: 20rem;
+  }
+  
+  
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  
+  
+  .flex-col{
+    flex-direction: column;
+  }
+  
+  .items-center{
+    align-items: center;
+  }
+  
+  
+  .text-white{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+  
+  
+  .opacity-0{
+    opacity: 0;
+  }
+  
+  .group:hover .group-hover\:block{
+    display: block;
+  }
+  
+  .group:hover .group-hover\:bg-brand-yellow{
+    --tw-bg-opacity: 1;
+    background-color: rgb(219 141 44 / var(--tw-bg-opacity));
+  }
+  
+  .group:hover .group-hover\:opacity-100{
+    opacity: 1;
+  }
+  
+
+
+  .bank_icon_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+   
+}
+
+.bank_icon_container img {
+    width: 50px;
+    padding: 5px;
+}
+
+.title-shadow {
+    margin-top: 200px;
+}
+
+#hero .hero-text h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px; /* Ajuste conforme necessário */
+    color: white; /* ou outra cor que combine com seu design */
+}
+
+.bank_icon_container h1 {
+  position: absolute;
+  top: 670px; /* Ajuste o valor conforme necessário */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  color: white;
+  font-family: Verdana
+}

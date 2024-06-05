@@ -1,0 +1,201 @@
+/* Estilos específicos para a página de contato */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    color: #080808;
+    background-image: url('images/contatos.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Garante altura mínima da página */
+    display: flex;
+    flex-direction: column;
+   
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: #1a1818; /* Fundo preto sólido */
+    color: #fff; 
+    padding: 1.5rem 2rem; 
+    position: fixed;
+    width: 97%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 36px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h1, h2, h3, p {
+    margin: 0.5em 0;
+}
+
+
+
+#contact-form {
+    background-color: #fffefe; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(79, 224, 12, 0.1); /* Sombra sutil */
+    padding: 30px;
+    width: 550px; /* Largura da caixa */
+}
+
+#contact-form h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: calc(100% - 20px); /* Largura total menos o padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #131212;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #8B0000; /* Cor de destaque */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #8B0000; /* Cor mais escura ao passar o mouse */
+}
+
+#contact-info {
+    text-align: center;
+    color: #f1eded;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+#contact-info p {
+    margin: 1em 0;
+}
+
+
+
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 1em 0;
+    border-top: 1px solid #333;
+    color: #f5ebeb;
+}
+
+/* Container do Logo e Texto */
+.logo-text-container { /* Novo container para agrupar logo e texto */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o logo e o texto */
+    margin-left: 30px; /* Adiciona uma margem à esquerda */
+}
+
+.logo {
+    max-width: 60px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Adiciona um espaçamento entre a logo e o texto */
+}
+
+/* Texto do Cabeçalho */
+.header-text {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    font-family: Verdana
+
+}
+
+nav ul li a.active {
+    background-color: #8B0000; /* Cor de fundo do item ativo */
+    color: #f3f2f2; /* Cor do texto do item ativo */
+}
+
+nav ul li a:hover {
+    background-color: #8B0000; /* Cor de fundo ao passar o mouse */
+    color: #f3f2f2; /* Cor do texto ao passar o mouse */
+}
+
+#sobre-nos {
+    text-align: center;
+    padding: 5rem 0;
+  
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    margin-top: 16px;
+}
+
+.whatsapp-float:hover {
+    background-color: #25d366;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.botao-whatsapp {
+    display: block; /* Para ocupar toda a largura do container */
+    background-color: #8B0000; /* Cor verde do WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
